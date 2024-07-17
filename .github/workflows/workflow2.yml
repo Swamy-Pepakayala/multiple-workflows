@@ -6,8 +6,8 @@ on:
     types:
       - completed
       
-concurrency:
-  group: workflow2-concurrency
+# concurrency:
+#   group: workflow2-concurrency
 
 jobs:
   job1:
