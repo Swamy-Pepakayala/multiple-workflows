@@ -5,6 +5,9 @@ on:
     workflows: ["Workflow 1"]
     types:
       - completed
+      
+concurrency:
+  group: workflow2-concurrency
 
 jobs:
   job1:
