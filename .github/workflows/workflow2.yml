@@ -1,13 +1,19 @@
 name: Workflow 2
 
-on:
-  workflow_run:
-    workflows: ["Workflow 1"]
-    types:
-      - completed
+# on:
+#   workflow_run:
+#     workflows: ["Workflow 1"]
+#     types:
+#       - completed
       
-# concurrency:
-#   group: workflow2-concurrency
+on:
+  push:
+    branches:
+      - main
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: false
 
 jobs:
   job1:
